@@ -1,0 +1,47 @@
+.navbar {
+  background-color: #26262600;
+  transition: 1s;
+  overflow: hidden;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+  animation: smoothScroll 1s forwards;
+  background-color: #262626bf;
+  backdrop-filter: blur(6px);
+}
+body {
+  /* background: linear-gradient(10deg, red, blue); */
+  background: #0d0d0d;
+  color: white;
+}
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-142px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.home-section {
+  background-image: url(./assets/images/banner-img.jpg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-color: #0d0d0d;
+  /* min-height: 100vh; */
+  background-position: right top;
+  position: relative;
+}
+/* .home-section::after {
+  width: 100%;
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background: linear-gradient(to top, #090909, #0d0d0d00);
+} */
