@@ -24,4 +24,5 @@ export const darkTheme = createTheme({
   typography: {
     fontFamily: "vazir, roboto",
   },
+  
 });

@@ -1,11 +1,27 @@
-import { LockPersonRounded, SearchRounded } from "@mui/icons-material";
-import { Button, IconButton, Typography } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import {
+  LockPersonRounded,
+  MenuRounded,
+  SearchRounded,
+} from "@mui/icons-material";
+import { Button, IconButton } from "@mui/material";
+import { stagger, useAnimate } from "framer-motion";
+import { useContext, useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/images/AiMentor-logo.png";
+import { Menu } from "./Header/Menu";
+import { MenuToggle } from "./Header/MenuToggle";
+import Search from "./Search";
 
+import MainContext from "../context";
 const Header = () => {
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
   const headerRef = useRef(null);
+  const [open, setOpen] = useState(false);
+  const { drawerOpen, setDrawerOpen } = useContext(MainContext);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
 
   // handle scroll event
   const handleScroll = (elTopOffset, elHeight) => {
@@ -31,48 +47,111 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      ref={headerRef}
-      className={`navbar${
-        sticky.isSticky ? " sticky" : ""
-      } nav-scrolling w-full h-[60px] fixed bg-background-gray px-1 text-white flex justify-between items-center px-3`}
-    >
-      <div className="w-[50%] bg-slate-400 flex gap-5 ">
-        <div className="logo">
-          <img src={logo} alt="logo header" />
+    <>
+      <div
+        ref={headerRef}
+        className={`navbar${
+          sticky.isSticky ? " sticky" : ""
+        }  w-full h-[60px] fixed text-white items-center px-3`}
+      >
+        <div className=" flex gap-5 ">
+          <div>
+            <img src={logo} alt="logo header" className="my-auto" />
+          </div>
         </div>
-        <div className="menu ml-5">
-          <ul className="flex text-[#ffff] gap-4  ">
-            <li>Home</li>
-            <li>Pages</li>
-            <li>Blogs</li>
-            <li>Shop</li>
-            <li>Contacts</li>
+        <div className="menu  h-[60px] ml-5 max-md:hidden mr-auto">
+          <ul className="flex h-[60px]   menu-item   text-[#ffff] gap-4  ">
+            <li className="my-auto">
+              <div className="item-header">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-accent" : "text-white"
+                  }
+                >
+                  Home
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div className="item-header">Pages</div>
+              <ul>
+                <li>
+                  <NavLink
+                    to="/faq"
+                    className={({ isActive }) =>
+                      isActive ? "text-accent" : "text-white"
+                    }
+                  >
+                    F&Q
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      isActive ? "text-accent" : "text-white"
+                    }
+                  >
+                    About
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div className="item-header">Blogs</div>
+              <ul>
+                <li>test1</li>
+                <li>test2</li>
+                <li>test3</li>
+                <li>test4</li>
+              </ul>
+            </li>
+            <li>
+              <div className="item-header">Shop</div>
+              <ul>
+                <li>test1</li>
+                <li>test2</li>
+                <li>test3</li>
+                <li>test4</li>
+              </ul>
+            </li>
+            <li>
+              <div className="item-header">Contacts</div>
+            </li>
           </ul>
         </div>
+        <div className="button-group flex items-center max-md:hidden">
+          <Search />
+          <Button
+            variant="outlined"
+            sx={{
+              color: "white",
+              borderColor: "white",
+              borderRadius: "8px",
+              "&:hover": {
+                background: "#7f00ff",
+              },
+            }}
+            className="rounded-md  text-btn-card"
+            color="secondary"
+            startIcon={<LockPersonRounded className="ml-0 mx-2 " />}
+          >
+            login
+          </Button>
+        </div>
+        <div className="btn-res max-md:flex  hidden ">
+          <IconButton
+            className="p-6"
+            disableRipple
+            // onClick={toggleDrawer(true)}
+            onClick={() => setDrawerOpen(!drawerOpen)}
+          >
+            <MenuRounded />
+          </IconButton>
+        </div>
       </div>
-      <div className="button-group">
-        <IconButton disableRipple color="light" className="rounded-md">
-          <SearchRounded className="ml-0 mx-2 text-6xl " />
-        </IconButton>
-        <Button
-          variant="outlined"
-          sx={{
-            color: "white",
-            borderColor: "white",
-            borderRadius: "8px",
-            "&:hover": {
-              background: "#7f00ff",
-            },
-          }}
-          className="rounded-md  text-btn-card"
-          color="secondary"
-          startIcon={<LockPersonRounded className="ml-0 mx-2 " />}
-        >
-          login
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };
 
