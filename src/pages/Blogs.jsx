@@ -1,54 +1,36 @@
-
 import { CalendarMonthRounded, ForumRounded } from "@mui/icons-material";
+import "./Blogs/style.css";
 import {
   Avatar,
-  Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
+  Pagination,
   Typography,
 } from "@mui/material";
-import { blogs1, quotes } from "../../assets";
-
-const BlogsHome = () => {
+import { aboutEagle, blogs1, quotes } from "../assets";
+import { useState } from "react";
+const Blogs = () => {
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   return (
     <>
-      <Box className="w-full flex flex-col gap-7 items-center box-blogs px-32 pb-20">
-        <Typography
-          variant="caption"
-          color="primary"
-          className="aos-init aos-animate "
-          data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
-        >
-          LATEST POSTS
-        </Typography>
-        <Typography
-          variant="h3"
-          data-aos="fade-up"
-          fontSize={{
-            xl: 90,
-            lg: 90,
-            md: 70,
-            sm: 45,
-            xs: 30,
-          }}
-          data-aos-anchor-placement="bottom-bottom"
-        >
-          {" "}
-          News & Articles
-        </Typography>
-
-        <div className="con-blogs-home py-8">
-          {[1, 2, 3].map((item) => (
+      <div className="bg-blogs-show pt-48 pb-32">
+        <div >
+          <Typography variant="h3" className="text-center ">
+            Ai Mentor blogs
+          </Typography>
+        </div>
+        <div className="cont-card-blogs mt-16 flex  gap-10  flex-wrap px-32">
+          {[1, 2, 3, 4, 5, 6].map((item) => (
             <Card
               key={item}
               sx={{
                 width: {
-                  sm:300,
-                  xs:280,
+                  sm: 300,
+                  xs: 280,
                 },
                 borderRadius: "7px",
                 mx: {
@@ -56,9 +38,7 @@ const BlogsHome = () => {
                   xs: "auto",
                 },
               }}
-              className="card-blogs aos-init aos-animate "
-              data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
+              className="card-blogs"
             >
               <div style={{ overflow: "hidden" }}>
                 <CardMedia
@@ -89,14 +69,13 @@ const BlogsHome = () => {
                   className="flex items-center gap-4"
                   component="div"
                 >
-                  <Avatar src={quotes} sx={{ width: 20, height: 20 }} />
+                  <Avatar src={aboutEagle} sx={{ width: 20, height: 20 }} />
                   <Typography color="primary" variant="caption">
                     Lorem ipsum .
                   </Typography>
                 </Typography>
                 <Typography variant="h6">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species,
+                  Lizards are a widespread group of squamate
                 </Typography>
                 <div className="flex justify-between">
                   <div>
@@ -123,9 +102,12 @@ const BlogsHome = () => {
             </Card>
           ))}
         </div>
-      </Box>
+        <div className="flex  justify-center mt-16">
+          <Pagination count={8} page={page} onChange={handleChange} />
+        </div>
+      </div>
     </>
   );
 };
 
-export default BlogsHome;
+export default Blogs;

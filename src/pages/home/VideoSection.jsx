@@ -1,8 +1,5 @@
 import { PlayCircleOutlineRounded } from "@mui/icons-material";
-import { Avatar, Typography } from "@mui/material";
 import React, { useRef } from "react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import ParallaxText from "../../components/ParallaxText";
 
 const VideoSection = () => {
@@ -42,115 +39,6 @@ const VideoSection = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <div
-          className="pt-20  comment-section aos-init aos-animate "
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-        >
-          <Swiper
-            navigation={true}
-            modules={[Navigation, Pagination, Autoplay]}
-            loop={true}
-            slidesPerView={1}
-            spaceBetween={50}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: true,
-            }}
-            style={{
-              width: "100%",
-              minHeight: "100%",
-              padding: "50px 128px",
-            }}
-            className="mySwiper video-swiper "
-          >
-            <SwiperSlide className="slide-comment ">
-              <Typography variant="h5" color="GrayText">
-                Nemo enim ipsam voluptatem quia voluptas sit as pernatur iaut
-                odite aut fugit, sed quia consequunt ur magni dolores eos qui
-                ratione voluptatem sequi dolor porro quisquam nesciunt.
-              </Typography>
-              <Avatar
-                src="https://html.designingmedia.com/aimentor/assets/images/engineer-img1.png"
-                sx={{ width: 56, height: 56 }}
-              >
-                user
-              </Avatar>
-              <Typography variant="h4">John Michael</Typography>
-              <Typography variant="subtitle1" color="grey">
-                ui/ux
-              </Typography>
-            </SwiperSlide>
-            <SwiperSlide className="slide-comment ">
-              <Typography variant="h5" color="GrayText">
-                Nemo enim ipsam voluptatem quia voluptas sit as pernatur iaut
-                odite aut fugit, sed quia consequunt ur magni dolores eos qui
-                ratione voluptatem sequi dolor porro quisquam nesciunt.
-              </Typography>
-              <Avatar
-                src="https://html.designingmedia.com/aimentor/assets/images/engineer-img1.png"
-                sx={{ width: 56, height: 56 }}
-              >
-                user
-              </Avatar>
-              <Typography variant="h4">John Michael</Typography>
-              <Typography variant="subtitle1" color="grey">
-                ui/ux
-              </Typography>
-            </SwiperSlide>
-            <SwiperSlide className="slide-comment ">
-              <Typography variant="h5" color="GrayText">
-                Nemo enim ipsam voluptatem quia voluptas sit as pernatur iaut
-                odite aut fugit, sed quia consequunt ur magni dolores eos qui
-                ratione voluptatem sequi dolor porro quisquam nesciunt.
-              </Typography>
-              <Avatar
-                src="https://html.designingmedia.com/aimentor/assets/images/engineer-img1.png"
-                sx={{ width: 56, height: 56 }}
-              >
-                user
-              </Avatar>
-              <Typography variant="h4">John Michael</Typography>
-              <Typography variant="subtitle1" color="grey">
-                ui/ux
-              </Typography>
-            </SwiperSlide>
-            <SwiperSlide className="slide-comment ">
-              <Typography variant="h5" color="GrayText">
-                Nemo enim ipsam voluptatem quia voluptas sit as pernatur iaut
-                odite aut fugit, sed quia consequunt ur magni dolores eos qui
-                ratione voluptatem sequi dolor porro quisquam nesciunt.
-              </Typography>
-              <Avatar
-                src="https://html.designingmedia.com/aimentor/assets/images/engineer-img1.png"
-                sx={{ width: 56, height: 56 }}
-              >
-                user
-              </Avatar>
-              <Typography variant="h4">John Michael</Typography>
-              <Typography variant="subtitle1" color="grey">
-                ui/ux
-              </Typography>
-            </SwiperSlide>
-          </Swiper>
-        </div>
       </div>
       <div
         className="p-10 pb-20 aos-init aos-animate "
@@ -158,8 +46,8 @@ const VideoSection = () => {
         data-aos-anchor-placement="bottom-bottom"
       >
         <section>
-      <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
-      <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+      <ParallaxText baseVelocity={-2}>this is art and paint</ParallaxText>
+      <ParallaxText baseVelocity={2}>Scroll velocity</ParallaxText>
     </section>
       </div>
     </>

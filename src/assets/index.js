@@ -26,3 +26,6 @@ export {default as  faq2 } from "./images/faq/sub-banner-img2.jpg";
 export {default as  aboutFox } from "./images/about/fox-img.jpg";
 export {default as  aboutEagle } from "./images/about/eagle-img.jpg";
 export {default as  aboutSmall } from "./images/about/visual-small-img.jpg";
+export {default as  bgBannerPrice } from "./images/price/h1-3.jpg";
+export {default as  mouseCheckOut } from "./images/Checkout/muose.png";
+export {default as  blog } from "./images/blog/gallery-image16.jpg";

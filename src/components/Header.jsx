@@ -2,6 +2,8 @@ import {
   LockPersonRounded,
   MenuRounded,
   SearchRounded,
+  ArrowLeftOutlined,
+  CloseRounded,
 } from "@mui/icons-material";
 import { Button, IconButton } from "@mui/material";
 import { stagger, useAnimate } from "framer-motion";
@@ -74,7 +76,8 @@ const Header = () => {
               </div>
             </li>
             <li>
-              <div className="item-header">Pages</div>
+              <div className="item-header">  <ArrowLeftOutlined className="arrow-header" />Pages</div>
+             
               <ul>
                 <li>
                   <NavLink
@@ -96,21 +99,49 @@ const Header = () => {
                     About
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/pricing"
+                    className={({ isActive }) =>
+                      isActive ? "text-accent" : "text-white"
+                    }
+                  >
+                    Pricing
+                  </NavLink>
+                </li>
               </ul>
             </li>
             <li>
-              <div className="item-header">Blogs</div>
+              <div className="item-header"><ArrowLeftOutlined className="arrow-header" />Blogs</div>
               <ul>
-                <li>test1</li>
+                <li>
+                <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive ? "text-accent" : "text-white"
+                    }
+                  >
+                    Blogs
+                  </NavLink>
+                </li>
                 <li>test2</li>
                 <li>test3</li>
                 <li>test4</li>
               </ul>
             </li>
             <li>
-              <div className="item-header">Shop</div>
+              <div className="item-header"><ArrowLeftOutlined className="arrow-header" />Shop</div>
               <ul>
-                <li>test1</li>
+                <li>
+                  <NavLink
+                    to="/checkout"
+                    className={({ isActive }) =>
+                      isActive ? "text-accent" : "text-white"
+                    }
+                  >
+                    Checkout
+                  </NavLink>
+                </li>
                 <li>test2</li>
                 <li>test3</li>
                 <li>test4</li>
@@ -140,14 +171,14 @@ const Header = () => {
             login
           </Button>
         </div>
-        <div className="btn-res max-md:flex  hidden ">
+        <div className="btn-res max-md:flex  hidden">
           <IconButton
             className="p-6"
             disableRipple
-            // onClick={toggleDrawer(true)}
             onClick={() => setDrawerOpen(!drawerOpen)}
           >
-            <MenuRounded />
+           
+            {drawerOpen ?  (<CloseRounded/>) :  (<MenuRounded/>)}
           </IconButton>
         </div>
       </div>

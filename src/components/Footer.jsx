@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="w-full footer-style bg-dark-card flex flex-wrap justify-between gap-10 p-20 px-32">
+      <div className="w-full footer-style bg-dark-card  justify-center flex flex-wrap  gap-10 p-20 px-32">
         <div className="card-footer">
           <Typography variant="h4" className="mb-20">
             AiMentor

@@ -121,7 +121,7 @@ const Gallery = () => {
               fontSize: "3vmin",
             }}
           >
-            art direction
+            Art Direction
           </Button>
           <Button
             disableRipple
@@ -166,7 +166,7 @@ const Gallery = () => {
               fontSize: "3vmin",
             }}
           >
-            ai
+            Ai
           </Button>
         </div>
         <Box className="  px-14" sx={{ width: "100%", minHeight: 393 }}>

@@ -26,7 +26,7 @@ const HomeSection = () => {
   return (
     <>
       <div className="home-section bg-[#141414]">
-        <div className="w-full  justify-center  flex  py-36  flex-col px-28">
+        <div className="w-full justify-center  flex  py-36  flex-col px-28">
           <div>
             <Typography
               variant="h1"

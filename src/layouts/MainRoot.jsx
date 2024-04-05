@@ -4,6 +4,10 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Faq from "../pages/Faq";
 import About from "../pages/About";
+import Pricing from "../pages/Pricing";
+import CheckOut from "../pages/CheckOut";
+import Blogs from "../pages/Blogs";
+import Blog from "../pages/Blog";
 
 export const MainRoot = createBrowserRouter([
   {
@@ -23,15 +27,23 @@ export const MainRoot = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-      //   {
-      //     path: "/blogs/:blogId",
-      //     element: <SingleBlogPage />,
-      //   },
+      {
+        path: "/pricing",
+        element: <Pricing />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+        {
+          path: "/blogs/:blogId",
+          element: <Blog />,
+        },
     ],
   },
   {
-    path: "/pages",
-    element: <p>this is a new page </p>,
+    path: "/checkout",
+    element: <CheckOut />,
     errorElement: <h3 className="text-center"> چیزی پیدا نکردیم 😪...</h3>,
   },
 ]);

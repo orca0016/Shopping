@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,12 +16,14 @@ function App() {
       element.requestFullscreen();
     }
   };
-
+  // toggleFullScreen();
   return (
     <div id="container-full ">
       <Header />
-      <Outlet />
-      <Footer/>
+      <section>
+        <Outlet />
+      </section>
+      <Footer />
     </div>
   );
 }

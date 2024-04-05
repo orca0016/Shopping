@@ -92,7 +92,6 @@ const Search = () => {
               width: "90%",
               "&.MuiInput-input": {
                 height: "100px",
-                bgcolor: "blue",
               },
             }}
           />

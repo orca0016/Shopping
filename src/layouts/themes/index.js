@@ -4,7 +4,7 @@ const { palette } = createTheme();
 const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
 export const darkTheme = createTheme({
-  direction: "rtl",
+  direction: "ltr",
   palette: {
     mode: "dark",
     light: createColor("#ffff"),
@@ -23,6 +23,9 @@ export const darkTheme = createTheme({
   },
   typography: {
     fontFamily: "vazir, roboto",
+    button: {
+      textTransform: 'none'
+    }
   },
   
 });

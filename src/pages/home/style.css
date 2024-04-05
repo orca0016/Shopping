@@ -213,3 +213,9 @@
   }
 }
 /* end home styles */
+
+@media screen and (min-width: 1824px) {
+  .home-section {
+    height: 100vh;
+  }
+}
